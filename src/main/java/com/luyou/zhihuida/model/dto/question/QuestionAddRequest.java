@@ -19,7 +19,7 @@ public class QuestionAddRequest implements Serializable {
     /**
      * 题目内容（json格式）因为是json格式，此处封装 QuestionContentDTO
      */
-    private QuestionContentDTO questionContent;
+    private List<QuestionContentDTO> questionContent;
 
     /**
      * 应用 id

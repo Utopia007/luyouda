@@ -17,6 +17,8 @@ public class UserAnswerAddRequest implements Serializable {
 
     private Long id;
 
+    private Long appId;
+
     /**
      * 用户答案（JSON 数组）
      */

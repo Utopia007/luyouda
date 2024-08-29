@@ -28,9 +28,9 @@ public class CodeGenerator {
     public static void main(String[] args) throws TemplateException, IOException {
         // 指定生成参数
         String packageName = "com.luyou.zhihuida";
-        String dataName = "用户答案";
-        String dataKey = "userAnswer";
-        String upperDataKey = "UserAnswer";
+        String dataName = "得分结果";
+        String dataKey = "scoringResult";
+        String upperDataKey = "ScoringResult";
 
         // 封装生成参数
         Map<String, Object> dataModel = new HashMap<>();
