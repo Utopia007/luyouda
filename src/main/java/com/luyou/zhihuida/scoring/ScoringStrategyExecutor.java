@@ -4,6 +4,7 @@ import com.luyou.zhihuida.common.ErrorCode;
 import com.luyou.zhihuida.exception.BusinessException;
 import com.luyou.zhihuida.model.entity.App;
 import com.luyou.zhihuida.model.entity.UserAnswer;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * @create 2024/8/29-14:16
  * @description
  */
+@Service
 public class ScoringStrategyExecutor {
 
     // 策略列表
@@ -22,7 +24,7 @@ public class ScoringStrategyExecutor {
     /**
      * 评分
      * @param choiceList
-     * @param app
+     * @param app  app.getAppType()（0-得分类，1-测评类）  app.getScoringStrategy()（0-自定义，1-AI）
      * @return
      * @throws Exception
      */

@@ -15,8 +15,6 @@ import java.util.List;
 @Data
 public class UserAnswerAddRequest implements Serializable {
 
-    private Long id;
-
     private Long appId;
 
     /**

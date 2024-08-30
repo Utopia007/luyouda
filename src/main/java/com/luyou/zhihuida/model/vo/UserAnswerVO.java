@@ -116,6 +116,7 @@ public class UserAnswerVO implements Serializable {
         }
         UserAnswerVO userAnswerVO = new UserAnswerVO();
         BeanUtils.copyProperties(userAnswer, userAnswerVO);
+        userAnswerVO.setChoices(JSONUtil.toList(userAnswer.getChoices(), String.class));
         return userAnswerVO;
     }
 }

@@ -136,6 +136,7 @@ public class UserAnswerServiceImpl extends ServiceImpl<UserAnswerMapper, UserAns
     public UserAnswerVO getUserAnswerVO(UserAnswer userAnswer, HttpServletRequest request) {
         // 对象转封装类
         UserAnswerVO userAnswerVO = UserAnswerVO.objToVo(userAnswer);
+        System.out.println("userAnswerVO = " + userAnswerVO);
 
         // 可以根据需要为封装对象补充值，不需要的内容可以删除
         // region 可选

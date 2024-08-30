@@ -10,12 +10,9 @@ import com.luyou.zhihuida.model.entity.UserAnswer;
 import com.luyou.zhihuida.model.vo.QuestionVO;
 import com.luyou.zhihuida.service.QuestionService;
 import com.luyou.zhihuida.service.ScoringResultService;
-import jdk.vm.ci.code.BailoutException;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -23,6 +20,7 @@ import java.util.Optional;
  * @create 2024/8/28-20:59
  * @description
  */
+@ScoringStrategyConfig(appType = 0, scoringStrategy = 0)
 public class CustomScoreScoringStrategy implements ScoringStrategy{
 
     @Resource

@@ -21,6 +21,7 @@ import java.util.Map;
  * @create 2024/8/28-20:58
  * @description
  */
+@ScoringStrategyConfig(appType = 1, scoringStrategy = 0)
 public class CustomTestScoringStrategy implements ScoringStrategy{
 
     @Resource
@@ -48,7 +49,6 @@ public class CustomTestScoringStrategy implements ScoringStrategy{
                 Wrappers.lambdaQuery(ScoringResult.class)
                         .eq(ScoringResult::getAppId, appId)
         );
-
         // 2. 统计用户每个选择对应的属性个数，如 I = 10 个，E = 5 个
         // 初始化一个Map，用于存储每个选项的计数
         Map<String, Integer> optionCount = new HashMap<>();
@@ -67,11 +67,11 @@ public class CustomTestScoringStrategy implements ScoringStrategy{
                         // 获取选项的result属性
                         String result = option.getResult();
                         // 如果result属性不在optionCount中，初始化为0
-//                        if (!optionCount.containsKey(result)) {
-//                            optionCount.put(result, 0);
-//                        }
+                        if (!optionCount.containsKey(result)) {
+                            optionCount.put(result, 0);
+                        }
                         // 在optionCount中增加计数
-                        optionCount.put(result, optionCount.getOrDefault(result, 0) + 1);
+                        optionCount.put(result, optionCount.get(result) + 1);
                     }
                 }
             }
