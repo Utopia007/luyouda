@@ -19,13 +19,13 @@ import java.lang.annotation.Target;
 public @interface ScoringStrategyConfig {
 
     /**
-     * 应用类型
+     * 应用类型 0-得分  1-测评
      * @return
      */
     int appType();
 
     /**
-     * 评分策略
+     * 评分策略 0-自定义  1-AI
      * @return
      */
     int scoringStrategy();

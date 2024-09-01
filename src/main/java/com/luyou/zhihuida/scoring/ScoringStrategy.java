@@ -15,8 +15,8 @@ public interface ScoringStrategy {
     /**
      * 执行评分 （策略模式）
      *
-     * @param choices
-     * @param app
+     * @param choices 用户答案
+     * @param app 应用
      * @return
      * @throws Exception
      */
