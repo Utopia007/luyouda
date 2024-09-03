@@ -15,6 +15,11 @@ import java.util.List;
 @Data
 public class UserAnswerAddRequest implements Serializable {
 
+    /**
+     * 用于实现接口幂等
+     */
+    private Long id;
+
     private Long appId;
 
     /**
