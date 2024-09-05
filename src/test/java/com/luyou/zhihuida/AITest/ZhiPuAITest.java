@@ -8,6 +8,8 @@ import com.zhipu.oapi.service.v4.model.ChatCompletionRequest;
 import com.zhipu.oapi.service.v4.model.ChatMessage;
 import com.zhipu.oapi.service.v4.model.ChatMessageRole;
 import com.zhipu.oapi.service.v4.model.ModelApiResponse;
+import io.reactivex.Scheduler;
+import io.reactivex.schedulers.Schedulers;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -87,6 +89,22 @@ public class ZhiPuAITest {
         System.out.println(aiManager.doRequest(system, user, Boolean.FALSE, 0.5f));
 
     }
+
+    @Test
+    void test() {
+        Scheduler io = Schedulers.io();
+        while (true) {
+            io.scheduleDirect(() -> {
+                System.out.println(Thread.currentThread().getName() + " print hello");
+                try {
+                    Thread.sleep(50000l);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
 
 
 

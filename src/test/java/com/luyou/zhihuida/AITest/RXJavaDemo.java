@@ -1,9 +1,13 @@
 package com.luyou.zhihuida.AITest;
 
+import com.luyou.zhihuida.controller.QuestionController;
+import com.luyou.zhihuida.model.dto.question.AiGenerateQuestionRequest;
 import io.reactivex.Flowable;
 import io.reactivex.schedulers.Schedulers;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -11,6 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @create 2024/9/1-16:23
  * @description
  */
+@SpringBootTest
 public class RXJavaDemo {
 
     @Test
@@ -28,6 +33,24 @@ public class RXJavaDemo {
         // 让主线程睡眠，以便观察输出
         Thread.sleep(10000L);
     }
+
+    @Resource
+    private QuestionController questionController;
+
+    @Test
+    void aiGenerateQuestionSSEVIPTest() throws InterruptedException {
+        AiGenerateQuestionRequest request = new AiGenerateQuestionRequest();
+        request.setAppId(3L);
+        request.setQuestionNumber(10);
+        request.setOptionNumber(2);
+
+        questionController.aiGenerateQuestionSSETest(request, false);
+        questionController.aiGenerateQuestionSSETest(request, false);
+        questionController.aiGenerateQuestionSSETest(request, true);
+
+        Thread.sleep(1000000L);
+    }
+
 
 
 }
